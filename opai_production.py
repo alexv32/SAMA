@@ -18,7 +18,7 @@ from slack_sdk import WebClient
 from slack_bolt import App
 
 from dotenv import load_dotenv
-load_dotenv('environ.env')
+load_dotenv('env_prod.env')
 
 '''
 loader = PyPDFLoader("/Users/ayalah/Documents/SAMA_2/NKB-140623-160136.pdf")
