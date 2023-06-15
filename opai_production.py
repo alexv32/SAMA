@@ -70,7 +70,7 @@ def handle_direct_message(body, logger):
     # Let thre user know that we are busy with the request 
     response = client.chat_postMessage(channel=body["event"]["channel"], 
                                        thread_ts=body["event"]["event_ts"],
-                                       text=f"Hello from your bot! :robot_face: \nThanks for your request, I'm on it!")
+                                       text=f"Hello from your bot! :robot_face: \nThanks for your request, I'm on it!\n Boop Boop Beep Boop")
     handle_chat_response(query,body)
 
 @app.event("app_mention")   

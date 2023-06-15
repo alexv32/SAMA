@@ -58,7 +58,7 @@ index_name = "elementorcx-chatbot" # put in the name of your pinecone index here
 '''docsearch = Pinecone.from_texts([t.page_content for t in texts], embeddings, index_name=index_name)'''
 docsearch = Pinecone.from_existing_index(index_name=index_name, embedding=embeddings)
 
-spliter=1
+
 @app.event("message")
 def handle_direct_message(body, logger):
     # Log message 
@@ -70,7 +70,7 @@ def handle_direct_message(body, logger):
     # Let thre user know that we are busy with the request 
     response = client.chat_postMessage(channel=body["event"]["channel"], 
                                        thread_ts=body["event"]["event_ts"],
-                                       text=f"Hello from your bot! :robot_face: \nThanks for your request, I'm on it!")
+                                       text=f"I'm on it!\nBoop Boop Beep Boop :robot_face:")
     handle_chat_response(query,body)
 
 @app.event("app_mention")   
@@ -84,7 +84,7 @@ def handle_message_events(body, logger):
     # Let thre user know that we are busy with the request 
     response = client.chat_postMessage(channel=body["event"]["channel"], 
                                        thread_ts=body["event"]["event_ts"],
-                                       text=f"Hello from your bot! :robot_face: \nThanks for your request, I'm on it!")
+                                       text=f"I'm on it!\nBoop Boop Beep Boop :robot_face:")
     handle_chat_response(query,body)
 
 def handle_chat_response(query,body):
@@ -133,7 +133,7 @@ def handle_chat_response(query,body):
 
     client.chat_postMessage(channel=body["event"]["channel"], 
                                        thread_ts=body["event"]["event_ts"],
-                                       text=f"*The relevant Category is:* \n {categories}")    
+                                       text=f"*Add the following Category:* \n {categories}")    
                                      
 
     print("Summary:")
